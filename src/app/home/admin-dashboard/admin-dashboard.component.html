@@ -1,0 +1,41 @@
+<h2 style="text-align: center;">Welcome to the admin panel</h2>
+<div style="margin-left: 15px;">
+    <!-- Guard example -->
+    <a routerLink="homechild" href="#"><button class="btn btn-primary">Route to HomeChild</button></a>
+
+    <!-- Guard example -->
+    <div class="row" style="margin: 0px; margin-top: 15px;">
+        <div class="form-group col-md-3" style="padding-left: 0px;">
+            <label class="for-control">Credit Card number</label>
+            <input class="form-control" type="text" style="width: 80%; display: inline-block;"
+                    (keypress)="isNumber($event)" appCreditCardNumber [(ngModel)]="creditCardnum"
+                    (keyup)="formatNumber($event)">
+        </div>
+    </div>
+
+    <!-- Dynamic Textbox generate example -->
+    <div>
+        <form [formGroup]="dateForm">
+            <div class="row" style="margin: 0px;">
+                <div class="col-md-2" style="padding-left: 0px;">
+                    <label>From Date</label>
+                    <input type="date" class="form-control" formControlName="fromDate">
+                </div>
+                <div class="col-md-2" style="padding-left: 0px;">
+                    <label>To Date</label>
+                    <input type="date" class="form-control" formControlName="toDate">
+                </div>
+                <div class="col-md-1" style="padding-left: 0px;">
+                    <button class="btn btn-success" (click)="submitDate()" style="position: absolute; bottom: 0px;">Submit</button>
+                </div>
+            </div>
+
+            <div formArrayName="monthRange" class="row" style="margin: 15px 0px 0px 0px;">
+                <div [formGroupName]="i" *ngFor="let tech of dateForm.controls.monthRange.controls; let i = index"
+                    class="col-md-3" style="padding-left: 0px;">
+                    <input type="text" class="form-control" formControlName="betweenDate">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
