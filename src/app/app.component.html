@@ -1,21 +1,21 @@
 <nav class="navbar navbar-expand" style="background-color: #eee; box-shadow: 0px 0px 9px 9px rgba(0,0,0,0.1); margin-bottom: 20px;">
-    <a class="navbar-brand brand-custom" href="#">
+    <a class="navbar-brand brand-custom" routerLink="/home">
         Angular Basics
     </a>
     
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item" *ngIf="!localStorageService.userToken">
-                <a class="nav-link login-custom" href="#" routerLink="registration/login">Login</a>
+                <a class="nav-link login-custom" routerLink="registration/login">Login</a>
             </li>
             <li class="nav-item" *ngIf="!localStorageService.userToken">
-                <a class="nav-link login-custom" href="#" routerLink="/registration">Register</a>
+                <a class="nav-link login-custom" routerLink="/registration">Register</a>
             </li>
             <li class="nav-item" *ngIf="localStorageService.userRole === 'admin'">
-                <a class="nav-link login-custom" href="#" routerLink="/home/adminDashboard">Admin Panel</a>
+                <a class="nav-link login-custom" routerLink="/home/adminDashboard">Admin Panel</a>
             </li>
             <li class="nav-item" *ngIf="localStorageService.userToken">
-                <a class="nav-link login-custom" href="#" routerLink="/home">home</a>
+                <a class="nav-link login-custom" routerLink="/home">home</a>
             </li>
             <li class="nav-item" *ngIf="localStorageService.userToken">
                 <a class="nav-link login-custom" href="javascript:void(0)" (click)="kickoutUser()">Logout</a>
