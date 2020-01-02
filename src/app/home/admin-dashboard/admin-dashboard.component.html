@@ -1,20 +1,22 @@
 <h2 style="text-align: center;">Welcome to the admin panel</h2>
-<div style="margin-left: 15px;">
-    <!-- Guard example -->
-    <a routerLink="homechild" href="#"><button class="btn btn-primary">Route to HomeChild</button></a>
-
-    <!-- Guard example -->
-    <div class="row" style="margin: 0px; margin-top: 15px;">
-        <div class="form-group col-md-3" style="padding-left: 0px;">
-            <label class="for-control">Credit Card number</label>
-            <input class="form-control" type="text" style="width: 80%; display: inline-block;"
-                    (keypress)="isNumber($event)" appCreditCardNumber [(ngModel)]="creditCardnum"
-                    (keyup)="formatNumber($event)">
+<div>
+    <!-- Credit Card Directive -->
+    <div style="margin-left: 15px;">
+        <div style="margin-bottom: 15px;"><code>Directive for credit card</code></div>
+        <div class="row" style="margin: 0px; margin-top: 15px;">
+            <div class="form-group col-md-3" style="padding-left: 0px;">
+                <label class="for-control">Credit Card number</label>
+                <input class="form-control" type="text" style="width: 80%; display: inline-block;"
+                        (keypress)="isNumber($event)" appCreditCardNumber [(ngModel)]="creditCardnum"
+                        (keyup)="formatNumber($event)">
+            </div>
         </div>
     </div>
+    <hr/>
 
     <!-- Dynamic Textbox generate example -->
-    <div>
+    <div style="margin-left: 15px;">
+        <div style="margin-bottom: 15px;"><code>Generate Dynamic textboxes of months for given range</code></div>
         <form [formGroup]="dateForm">
             <div class="row" style="margin: 0px;">
                 <div class="col-md-2" style="padding-left: 0px;">
@@ -38,4 +40,10 @@
             </div>
         </form>
     </div>
+    <hr/>
+
+    <!-- Guard example -->
+    <a routerLink="homechild" style="margin-left: 15px;"><button class="btn btn-primary">Load Children</button></a>    
 </div>
+<hr/>
+<router-outlet></router-outlet>

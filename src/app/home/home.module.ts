@@ -10,16 +10,17 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { HomeChildComponent } from './home-child/home-child.component';
 import { DirectivesModule } from '../directives/directives.module';
 
-const routes:Routes = [
+const routes: Routes = [
   { path: "", component: HomeComponent, canActivate: [AuthGuardService] },
-  { path: "adminDashboard", 
+  {
+    path: "adminDashboard",
+    component: AdminDashboardComponent,
     canActivate: [AuthGuardService],
-    data: { expectedRole: "admin" }, 
+    data: { expectedRole: "admin" },
     canActivateChild: [ActivateChildGuard],
     children: [
-      { path : '', component: AdminDashboardComponent },
       { path: "homechild", component: HomeChildComponent, canDeactivate: [CanDeactivateGuard] }
-    ]
+    ],
   }
 ]
 
