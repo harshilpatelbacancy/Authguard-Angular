@@ -19,8 +19,8 @@ export class AdminDashboardComponent implements OnInit {
   monthNames = [ "January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December" ];
 
-  constructor(public formBuilder:FormBuilder) { 
-    
+  constructor(public formBuilder:FormBuilder) {
+
   }
 
   ngOnInit() {
@@ -70,10 +70,10 @@ export class AdminDashboardComponent implements OnInit {
     }
   }
 
-  addOtherSkillFormGroup(dateValue:string): FormGroup {  
-    return this.formBuilder.group({  
+  addOtherSkillFormGroup(dateValue:string): FormGroup {
+    return this.formBuilder.group({
       betweenDate: [dateValue]
-    });  
+    });
   }
 
   monthDiff(from:string, to:string):any {
@@ -86,7 +86,7 @@ export class AdminDashboardComponent implements OnInit {
 
     for (var i = datFrom.getMonth(); i <= diffYear; i++) {
         arr.push(this.monthNames[i%12] + " " + Math.floor(fromYear+(i/12)));
-    }        
+    }
 
     return arr;
   }

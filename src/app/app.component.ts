@@ -9,7 +9,7 @@ import { LocalStorageService } from './registration/local-storage.service';
 export class AppComponent {
   title = 'CoreProject';
 
-  constructor(private localStorageService:LocalStorageService){}
+  constructor(public localStorageService:LocalStorageService){}
 
   kickoutUser(){
     this.localStorageService.logout();

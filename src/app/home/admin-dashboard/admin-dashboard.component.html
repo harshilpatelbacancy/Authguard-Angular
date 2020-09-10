@@ -32,18 +32,18 @@
                 </div>
             </div>
 
-            <div formArrayName="monthRange" class="row" style="margin: 15px 0px 0px 0px;">
+            <!-- <div formArrayName="monthRange" class="row" style="margin: 15px 0px 0px 0px;">
                 <div [formGroupName]="i" *ngFor="let tech of dateForm.controls.monthRange.controls; let i = index"
                     class="col-md-3" style="padding-left: 0px;">
                     <input type="text" class="form-control" formControlName="betweenDate">
                 </div>
-            </div>
+            </div> -->
         </form>
     </div>
     <hr/>
 
     <!-- Guard example -->
-    <a routerLink="homechild" style="margin-left: 15px;"><button class="btn btn-primary">Load Children</button></a>    
+    <a routerLink="homechild" style="margin-left: 15px;"><button class="btn btn-primary">Load Children</button></a>
 </div>
 <hr/>
 <router-outlet></router-outlet>
