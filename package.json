@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
     "bootstrap": "^4.3.1",
-    "elliptic": "^6.5.3",
+    "elliptic": "^6.5.4",
     "handlebars": "^4.7.6",
     "http-proxy": "^1.18.1",
     "https-proxy-agent": "^2.2.4",
